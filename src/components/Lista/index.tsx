@@ -1,4 +1,5 @@
-import './style.scss'
+import Item from './Item';
+import style from './Lista.module.scss';
 
 const Lista = (): JSX.Element => {
     const tarefas = [
@@ -17,14 +18,11 @@ const Lista = (): JSX.Element => {
     ];
 
     return(
-        <aside className='listaTarefas'>
+        <aside className={ style.listaTarefas }>
             <h2> Estudos do dia </h2>
             <ul >
-                { tarefas.map(item => (
-                    <li key={ item.tarefa.toString() } className='item'>
-                        <h3>{ item.tarefa }</h3>
-                        <span>{ item.tempo }</span>
-                    </li>
+                { tarefas.map((item, index) => (
+                    <Item {...item} key={ index } />
                 )) }
             </ul>
         </aside>
