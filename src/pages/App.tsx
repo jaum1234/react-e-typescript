@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Formulario from '../components/Formulario';
 import Lista from '../components/Lista';
-import Cronometro from '../Cronometro';
+import Cronometro from '../components/Cronometro';
 import { ITarefa } from '../types/tarefa';
 
 import style from './App.module.scss';
@@ -13,6 +13,10 @@ function App() {
 
   const selecionaTarefa = (tarefaSelecionada: ITarefa) => {
     setSelecionado(tarefaSelecionada);
+    setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+      ...tarefa,
+      selecionado: tarefa.id === tarefaSelecionada.id ? true : false
+    })));
   }
 
   return (
