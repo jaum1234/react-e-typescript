@@ -1,4 +1,4 @@
-import { Component, Dispatch, FormEvent, SetStateAction, useState } from "react";
+import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { ITarefa } from "../../types/tarefa";
 import Botao from "../Botao";
